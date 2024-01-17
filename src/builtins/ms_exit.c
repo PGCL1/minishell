@@ -6,7 +6,7 @@
 /*   By: aabourri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 19:19:08 by aabourri          #+#    #+#             */
-/*   Updated: 2024/01/12 15:43:03 by aabourri         ###   ########.fr       */
+/*   Updated: 2024/01/17 18:39:39 by glacroix         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ int	ms_exit(t_data *data)
 	argv = data->argv + 1;
 	ft_putendl_fd("exit", data->fd[MS_STDOUT]);
 	count = ms_exit_count(argv);
+	if (!*argv )
+		exit(0);
 	if (count > 0 && ms_exit_check(*argv))
 		exit_status = 255;
 	else if (count > 1)
